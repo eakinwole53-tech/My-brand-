@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akinwole Esther Favour | Personal Brand Strategist & Ghostwriter</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple-deep: #2D0A5E;
+    --purple-mid: #5B1FAD;
+    --purple-bright: #8B3DFF;
+    --purple-glow: #C084FC;
+    --gold: #F5C842;
+    --white: #FAFAFA;
+    --soft: #EDE8F8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--purple-deep);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Background mesh */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(139,61,255,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(192,132,252,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(91,31,173,0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  section, nav, footer { position: relative; z-index: 1; }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    border-bottom: 1px solid rgba(192,132,252,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--purple-glow);
+    letter-spacing: 0.5px;
+  }
+
+  .nav-cta {
+    background: var(--purple-bright);
+    color: var(--white);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(139,61,255,0.4);
+  }
+
+  .nav-cta:hover {
+    background: var(--purple-glow);
+    color: var(--purple-deep);
+    box-shadow: 0 0 35px rgba(192,132,252,0.6);
+    transform: translateY(-2px);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 40px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid var(--purple-glow);
+    color: var(--purple-glow);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease 0.15s both;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, var(--purple-glow), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(250,250,250,0.75);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    font-weight: 300;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.8s ease 0.45s both;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--purple-bright), var(--purple-glow));
+    color: var(--white);
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(139,61,255,0.5);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(139,61,255,0.7);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(192,132,252,0.5);
+    color: var(--purple-glow);
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(192,132,252,0.1);
+    border-color: var(--purple-glow);
+    transform: translateY(-3px);
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 100px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 60px;
+    line-height: 1.2;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(192,132,252,0.15);
+    border-radius: 20px;
+    padding: 40px 36px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--purple-bright), var(--purple-glow));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  .card:hover {
+    background: rgba(139,61,255,0.1);
+    border-color: rgba(192,132,252,0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(91,31,173,0.3);
+  }
+
+  .card:hover::before { transform: scaleX(1); }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+    color: var(--white);
+  }
+
+  .card p {
+    color: rgba(250,250,250,0.65);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    font-weight: 300;
+  }
+
+  /* WHY */
+  .why {
+    padding: 100px 60px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(192,132,252,0.1);
+    border-bottom: 1px solid rgba(192,132,252,0.1);
+  }
+
+  .why-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .why-text .section-title { margin-bottom: 24px; }
+
+  .why-text p {
+    color: rgba(250,250,250,0.7);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .stat {
+    background: rgba(139,61,255,0.15);
+    border: 1px solid rgba(192,132,252,0.2);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--purple-glow), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: rgba(250,250,250,0.6);
+    margin-top: 6px;
+  }
+
+  /* BOOKING FORM */
+  .booking {
+    padding: 100px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .booking .section-title { margin-bottom: 16px; }
+
+  .booking-sub {
+    color: rgba(250,250,250,0.65);
+    margin-bottom: 50px;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(192,132,252,0.2);
+    border-radius: 24px;
+    padding: 50px;
+    text-align: left;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--purple-glow);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(192,132,252,0.25);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--purple-bright);
+    background: rgba(139,61,255,0.1);
+    box-shadow: 0 0 0 3px rgba(139,61,255,0.15);
+  }
+
+  .form-group select option {
+    background: var(--purple-deep);
+    color: var(--white);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--purple-bright), var(--purple-glow));
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(139,61,255,0.4);
+    margin-top: 10px;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(139,61,255,0.6);
+  }
+
+  .success-msg {
+    display: none;
+    background: rgba(139,61,255,0.2);
+    border: 1px solid var(--purple-glow);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: var(--purple-glow);
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 60px;
+    border-top: 1px solid rgba(192,132,252,0.15);
+    text-align: center;
+  }
+
+  footer p {
+    color: rgba(250,250,250,0.4);
+    font-size: 0.85rem;
+  }
+
+  footer a {
+    color: var(--purple-glow);
+    text-decoration: none;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .services, .why, .booking { padding: 60px 24px; }
+    .why-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form { padding: 30px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Esther Favour</div>
+  <a href="#booking" class="nav-cta">Work With Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">Personal Brand Strategist & Ghostwriter</div>
+  <h1>Building Brands.<br><span>Growing Influence.</span></h1>
+  <p class="hero-sub">I help entrepreneurs, coaches and experts build powerful personal brands that attract clients, income and recognition — through ghostwriting, brand strategy and nonfiction books.</p>
+  <div class="hero-btns">
+    <a href="#booking" class="btn-primary">📩 Work With Me</a>
+    <a href="#services" class="btn-secondary">See How I Help</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label">What I Do</div>
+  <h2 class="section-title">How I Help You<br>Build Your Brand</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">✍🏾</div>
+      <h3>Personal Brand Ghostwriting</h3>
+      <p>I write powerful content in your voice that positions you as the go-to expert in your niche and keeps your brand consistent and visible online.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📚</div>
+      <h3>Nonfiction Book Ghostwriting</h3>
+      <p>I help you turn your expertise, story and knowledge into a professionally written nonfiction book that builds lasting authority and opens new doors.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>Personal Brand Strategy</h3>
+      <p>I build your brand from the ground up — your story, your positioning, your message — so the right people find you and want to work with you.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💡</div>
+      <h3>Content Strategy</h3>
+      <p>I create a custom content plan that keeps you visible, consistent and attracting clients — even when you're busy running your business.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔥</div>
+      <h3>Brand Story Crafting</h3>
+      <p>I craft a compelling brand story that makes people stop, connect and want to work with you — told in a way only you can tell it.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <h3>Positioning & Authority Building</h3>
+      <p>I position you for income, influence and recognition so you stop being the best-kept secret and start showing up as the authority you already are.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="why-inner">
+    <div class="why-text">
+      <div class="section-label">Why Esther</div>
+      <h2 class="section-title">Your Knowledge<br>Has Value. Let's<br>Show The World.</h2>
+      <p>Most talented people are invisible online — not because they lack value, but because they don't know how to package and communicate what they know in a way that attracts the right people.</p>
+      <p>I close that gap. I take what's inside your head and turn it into a brand, a voice and a presence that makes people stop, trust you and want to pay for your expertise.</p>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Written in your voice</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3-in-1</div>
+        <div class="stat-label">Strategy, writing & positioning</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Content ideas, never stuck</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">DM away from starting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="booking" id="booking">
+  <div class="section-label">Get Started</div>
+  <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; background: linear-gradient(135deg, var(--purple-glow), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; line-height: 1.2;">Akinwole Esther Favour</h1>
+  <h2 class="section-title">Ready to Build<br>Your Brand?</h2>
+  <p class="booking-sub">Fill out the form below and I'll get back to you within 24 hours. Let's talk about your brand and how we can work together.</p>
+
+  <div class="form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" id="fname" placeholder="Your first name">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" id="lname" placeholder="Your last name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" id="email" placeholder="your@email.com">
+    </div>
+    <div class="form-group">
+      <label>WhatsApp / Phone Number</label>
+      <input type="tel" id="phone" placeholder="+234 000 000 0000">
+    </div>
+    <div class="form-group">
+      <label>What Service Are You Interested In?</label>
+      <select id="service">
+        <option value="">— Select a service —</option>
+        <option>Personal Brand Ghostwriting</option>
+        <option>Nonfiction Book Ghostwriting</option>
+        <option>Personal Brand Strategy</option>
+        <option>Content Strategy</option>
+        <option>Brand Story Crafting</option>
+        <option>Full Brand Package</option>
+        <option>I'm Not Sure Yet — Let's Talk</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Tell Me About Your Brand & What You Need</label>
+      <textarea id="message" placeholder="Tell me about yourself, your business and what you're looking to achieve..."></textarea>
+    </div>
+    <button class="submit-btn" onclick="submitForm()">📩 Send My Request</button>
+    <div class="success-msg" id="successMsg">
+      ✅ Thank you! Your message has been received. Esther will be in touch within 24 hours. 🎉
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--purple-glow); margin-bottom: 12px;">Akinwole Esther Favour</p>
+  <p>Personal Brand Strategist · Ghostwriter · Nonfiction Book Writer</p>
+  <br>
+  <p>© 2025 Esther Favour. Building Brands. Building Voices. Growing Influence.</p>
+</footer>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Form submit
+  function submitForm() {
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const service = document.getElementById('service').value;
+
+    if (!fname || !email || !service) {
+      alert('Please fill in your name, email and select a service.');
+      return;
+    }
+
+    // Show success message
+    document.getElementById('successMsg').style.display = 'block';
+    document.querySelector('.submit-btn').textContent = '✅ Request Sent!';
+    document.querySelector('.submit-btn').style.background = 'rgba(139,61,255,0.3)';
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeUp 0.7s ease forwards';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.card, .stat, .why-text p').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
